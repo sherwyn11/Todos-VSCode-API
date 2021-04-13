@@ -4,7 +4,6 @@ import morgan from 'morgan';
 import path from 'path';
 import fs from 'fs';
 
-
 const app: express.Application = express();
 
 let accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), { flags: 'a' });
