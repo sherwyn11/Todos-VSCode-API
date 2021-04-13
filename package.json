@@ -1,0 +1,41 @@
+{
+  "name": "todos-vscode-api",
+  "version": "1.0.0",
+  "description": "API for the Todos-VSCode Extension.",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sherwyn11/Todos-VSCode-API.git"
+  },
+  "author": "Sherwyn D'souza",
+  "license": "MIT",
+  "scripts": {
+    "watch": "tsc -w",
+    "build": "tsc",
+    "dev": "nodemon dist/index.js",
+    "dev-ts": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
+    "start": "node dist/index.js",
+    "deploy": "NODE_ENV=deployment yarn run build && node ./dist/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-github": "^1.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.10",
+    "@types/express": "^4.17.11",
+    "@types/jsonwebtoken": "^8.5.1",
+    "@types/morgan": "^1.9.2",
+    "@types/node": "^14.14.37",
+    "@types/passport": "^1.0.6",
+    "@types/passport-github": "^1.1.5",
+    "nodemon": "^2.0.7",
+    "ts-node": "^9.1.1",
+    "typescript": "^4.2.4"
+  }
+}
