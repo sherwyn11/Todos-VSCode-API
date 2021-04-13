@@ -13,7 +13,7 @@
     "watch": "tsc -w",
     "build": "tsc",
     "dev": "nodemon dist/index.js",
-    "dev-ts": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
+    "ts-dev": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "start": "node dist/index.js",
     "deploy": "NODE_ENV=deployment yarn run build && node ./dist/index.js"
   },
@@ -22,9 +22,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "jsonwebtoken": "^8.5.1",
+    "mongodb": "^3.6.6",
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
-    "passport-github": "^1.1.0"
+    "passport-github": "^1.1.0",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.32"
   },
   "devDependencies": {
     "@types/cors": "^2.8.10",
