@@ -91,3 +91,5 @@
 ::1 - - [14/Apr/2021:11:44:36 +0000] "GET /api/auth/github/callback?code=b97f6409b10257efa1bf HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
 ::1 - - [14/Apr/2021:11:44:57 +0000] "GET /api/auth/github HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
 ::1 - - [14/Apr/2021:11:44:59 +0000] "GET /api/auth/github/callback?code=fd3d2eb7be133b9b73fe HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+::1 - - [14/Apr/2021:17:06:20 +0000] "GET /api/auth/github HTTP/1.1" 302 0 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"
+::1 - - [14/Apr/2021:17:06:22 +0000] "GET /api/auth/github/callback?code=3c27fdbe782158d68029 HTTP/1.1" 200 49 "-" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_4) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/89.0.4389.114 Safari/537.36"

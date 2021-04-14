@@ -12,7 +12,7 @@ authRouter
   .get(
     passport.authenticate("github", { session: false }),
     (_req: Request, res: Response) => {
-      res.send("You have been logged in with GitHub successfully!");
+      res.send("Logged in with GitHub successfully!");
     }
   );
 

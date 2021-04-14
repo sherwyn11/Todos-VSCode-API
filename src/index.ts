@@ -9,7 +9,7 @@ const PORT: number = Number(process.env.PORT) || 8000;
 const main = async () => {
   try {
     await createConnection(Object(devConfig));
-    console.log('Connected to MongoDB successfully!');
+    console.log("Connected to MongoDB successfully!");
     app.listen(PORT, () => {
       console.log(`Server is up on ${PORT}!`);
     });
