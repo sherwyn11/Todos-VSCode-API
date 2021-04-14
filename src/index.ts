@@ -7,15 +7,15 @@ import { devConfig } from "../ormconfig";
 const PORT: number = Number(process.env.PORT) || 8000;
 
 const main = async () => {
-  createConnection(Object(devConfig))
-    .then(async () => {
-      console.log("Connected to MongoDB successfully!");
-    })
-    .catch((error) => console.log(error));
-
-  app.listen(PORT, () => {
-    console.log(`Server is up on ${PORT}!`);
-  });
+  try {
+    await createConnection(Object(devConfig));
+    console.log('Connected to MongoDB successfully!');
+    app.listen(PORT, () => {
+      console.log(`Server is up on ${PORT}!`);
+    });
+  } catch (e) {
+    throw new Error(e);
+  }
 };
 
 main();
