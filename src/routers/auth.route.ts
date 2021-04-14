@@ -1,13 +1,19 @@
-import { Router, Request, Response } from 'express';
+import { Router, Request, Response } from "express";
+import passport from "passport";
 
 const authRouter: Router = Router();
 
-authRouter.route('/login').post((_req: Request, res: Response) => {
-  res.status(200).send('Login Works!');
-});
+authRouter
+  .route("/github")
+  .get(passport.authenticate("github", { session: false }));
 
-authRouter.route('/logout').post((_req: Request, res: Response) => {
-  res.status(200).send('Logout Works!');
-});
+authRouter
+  .route("/github/callback")
+  .get(
+    passport.authenticate("github", { session: false }),
+    (_req: Request, res: Response) => {
+      res.send("You have been logged in with GitHub successfully!");
+    }
+  );
 
 export default authRouter;
