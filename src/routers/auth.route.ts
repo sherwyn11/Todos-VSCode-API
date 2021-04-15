@@ -13,7 +13,7 @@ authRouter
     passport.authenticate("github", { session: false }),
     (req: Request, res: Response) => {
       const { accessToken } = req.user as any;
-      res.json({ accessToken });
+      res.redirect(process.env.VSCODE_POLKA_ENDPOINT! + accessToken);
     }
   );
 

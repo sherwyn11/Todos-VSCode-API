@@ -17,9 +17,8 @@ passport.use(
       if (!user) {
         user = await User.create({
           username: profile.username,
-          email: profile._json.email,
+          email: profile._json.email !== undefined ? profile._json.email : "",
         }).save();
-        console.log({ user });
       }
       cb(null, {
         accessToken: jwt.sign({ uid: user.id }, process.env.JWT_SECRET!, {
