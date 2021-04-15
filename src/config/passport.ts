@@ -2,12 +2,13 @@ import passport from "passport";
 import { Strategy as GitHubStrategy } from "passport-github";
 import { getMongoRepository } from "typeorm";
 import User from "../entities/User";
+import jwt from "jsonwebtoken";
 
 passport.use(
   new GitHubStrategy(
     {
-      clientID: process.env.GITHUB_CLIENT_ID || "GITHUB_CLIENT_ID",
-      clientSecret: process.env.GITHUB_CLIENT_SECRET || "GITHUB_CLIENT_SECRET",
+      clientID: process.env.GITHUB_CLIENT_ID!,
+      clientSecret: process.env.GITHUB_CLIENT_SECRET!,
       callbackURL: "http://localhost:8000/api/auth/github/callback",
     },
     async function (_: any, __: any, profile: any, cb: any) {
@@ -20,7 +21,11 @@ passport.use(
         }).save();
         console.log({ user });
       }
-      cb(null, {});
+      cb(null, {
+        accessToken: jwt.sign({ uid: user.id }, process.env.JWT_SECRET!, {
+          expiresIn: "7 days",
+        }),
+      });
     }
   )
 );

@@ -11,8 +11,9 @@ authRouter
   .route("/github/callback")
   .get(
     passport.authenticate("github", { session: false }),
-    (_req: Request, res: Response) => {
-      res.send("Logged in with GitHub successfully!");
+    (req: Request, res: Response) => {
+      const { accessToken } = req.user as any;
+      res.json({ accessToken });
     }
   );
 
