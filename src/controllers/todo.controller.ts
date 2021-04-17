@@ -9,13 +9,13 @@ const addTodoController = async (req: Request, res: Response) => {
     const status: boolean = req.body.status;
     const todoRepository = getMongoRepository(Todo);
 
-    await todoRepository.save({
+    let t = await todoRepository.save({
       userID: id,
       todo: todo,
       status: status,
       createdAt: Date.now(),
     });
-    res.status(201).json({ message: "Todo saved successfully!" });
+    res.status(201).json({ message: t });
   } catch (e) {
     res.status(500).json({ message: e });
   }
