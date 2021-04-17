@@ -1,7 +1,7 @@
-import { Entity, ObjectID, ObjectIdColumn, Column, BaseEntity } from "typeorm"; 
+import { Entity, ObjectID, ObjectIdColumn, Column } from "typeorm";
 
 @Entity()
-export default class User extends BaseEntity {
+export default class User {
   @ObjectIdColumn()
   id: ObjectID;
 

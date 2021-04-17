@@ -15,10 +15,10 @@ passport.use(
       const userRepository = getMongoRepository(User);
       let user = await userRepository.findOne({ username: profile.username });
       if (!user) {
-        user = await User.create({
+        user = await userRepository.save({
           username: profile.username,
           email: profile._json.email !== undefined ? profile._json.email : "",
-        }).save();
+        });
       }
       cb(null, {
         accessToken: jwt.sign({ uid: user.id }, process.env.JWT_SECRET!, {

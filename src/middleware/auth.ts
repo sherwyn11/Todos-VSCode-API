@@ -12,15 +12,12 @@ const auth = async (req: Request, res: Response, next: NextFunction) => {
     const token = req.header("Authorization")!.replace("Bearer ", "");
     const { uid } = jwt.verify(token, process.env.JWT_SECRET!) as DECODE_TOKEN;
     const userRepository = getMongoRepository(User);
-    const user = await userRepository.findOne(uid);
+    const user = await userRepository.findOneOrFail(uid);
     if (!user) {
       res.status(404).json({ message: "User not found!" });
       return;
     }
-    req.user = {
-      username: user.username,
-      email: user.email,
-    };
+    req.user = user;
     next();
   } catch (e) {
     res
