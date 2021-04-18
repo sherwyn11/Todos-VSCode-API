@@ -9,7 +9,7 @@ passport.use(
     {
       clientID: process.env.GITHUB_CLIENT_ID!,
       clientSecret: process.env.GITHUB_CLIENT_SECRET!,
-      callbackURL: "http://localhost:8000/api/auth/github/callback",
+      callbackURL: process.env.GITHUB_OAUTH_CALLBACK_URI,
     },
     async function (_: any, __: any, profile: any, cb: any) {
       const userRepository = getMongoRepository(User);

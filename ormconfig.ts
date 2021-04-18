@@ -6,9 +6,9 @@ let devConfig = {
   database: process.env.TYPEORM_DATABASE,
   synchronize: true,
   logging: true,
-  entities: ["src/entities/**/*.ts"],
-  migrations: ["src/migration/**/*.ts"],
-  subscribers: ["src/subscriber/**/*.ts"],
+  entities: ["src/entities/**/*.*"],
+  migrations: ["src/migration/**/*.*"],
+  subscribers: ["src/subscriber/**/*.*"],
   cli: {
     entitiesDir: "src/entities",
     migrationsDir: "src/migration",

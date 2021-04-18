@@ -15,6 +15,7 @@
     "dev": "nodemon dist/index.js",
     "ts-dev": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "start": "node dist/index.js",
+    "build-and-copy": "tsc && cp .env ./dist && cp .env.example ./dist",
     "deploy": "NODE_ENV=deployment yarn run build && node ./dist/index.js"
   },
   "dependencies": {
