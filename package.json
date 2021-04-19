@@ -15,7 +15,7 @@
     "dev": "nodemon dist/index.js",
     "ts-dev": "NODE_ENV=development nodemon --exec ts-node src/index.ts",
     "start": "node src/index.js",
-    "build-and-copy": "yarn run build && cp .env ./dist && cp .env.example ./dist",
+    "build-and-copy": "yarn run build && cp .env.example ./dist",
     "deploy": "git add . && git commit -m \"[deploy] deployed to Heroku\" && git push heroku master"
   },
   "dependencies": {
