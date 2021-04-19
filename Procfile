@@ -1,1 +1,1 @@
-web: cd ./dist && node src/index.js
+web: yarn run build-and-copy && cd ./dist && node src/index.js
